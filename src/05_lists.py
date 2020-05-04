@@ -7,23 +7,34 @@ y = [8, 9, 10]
 # For the following, DO NOT USE AN ASSIGNMENT (=).
 
 # Change x so that it is [1, 2, 3, 4]
+x.append(4)
 # YOUR CODE HERE
 print(x)
 
 # Using y, change x so that it is [1, 2, 3, 4, 8, 9, 10]
 # YOUR CODE HERE
+for i in range(len(y)):
+    x.append(y[i])
 print(x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 10]
 # YOUR CODE HERE
+for i in range(len(x)):
+    if i == 4:
+        x.pop(i)
 print(x)
 
 # Change x so that it is [1, 2, 3, 4, 9, 99, 10]
 # YOUR CODE HERE
+for i in range(len(x)):
+    if i == 5:
+        x.insert(i, 99)
 print(x)
 
 # Print the length of list x
 # YOUR CODE HERE
-
+print(len(x))
 # Print all the values in x multiplied by 1000
 # YOUR CODE HERE
+for i in range(len(x)):
+    print(x[i] * 1000)
