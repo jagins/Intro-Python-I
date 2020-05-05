@@ -30,3 +30,31 @@ it should use today’s date to get the month and year.
 import sys
 import calendar
 from datetime import datetime
+#step 1 user types in month and year
+
+def create_calander(date):
+  #step 2 validate user response
+  formatDate = date.split(' ')
+  #if no input:
+  if formatDate[0] == '':
+    #print calander for the current month
+    calendar.prmonth(datetime.now().year, datetime.now().month)
+  
+  #if input a month:
+  if len(formatDate) == 1:
+    if formatDate[0].isdigit():
+      calendar.prmonth(datetime.now().year, int(formatDate[0]))
+    else:
+      print('month and date must be a number')
+  # #if month and year:
+  if len(formatDate) > 1:
+    #print calendar for that month and year
+    if formatDate[0].isdigit():
+      calendar.prmonth(int(formatDate[1]), int(formatDate[0]))
+    else:
+      print('month and date must be a number')
+  #if format is wrong (!month_num, year):
+    #print error message saying month should be a number
+
+date = input('enter a month a year: ')
+create_calander(date)
